@@ -310,6 +310,75 @@
         </div>
     </section>
 
+    <!-- Kontakt Section -->
+    <section id="kontakt" class="contact-cta-section">
+        <div class="container contact-cta-grid">
+
+            <!-- Linke Spalte: Intro & 24/7 Notdienst Card -->
+            <div class="contact-cta-info">
+                <span class="section-tag-light">KONTAKT</span>
+                <h2 class="contact-cta-title">
+                    Wasserschaden?<br>Wir sind erreichbar!
+                </h2>
+                <p class="contact-cta-subtitle">
+                    Bei akuten Schäden zählt jede Stunde. Rufen Sie direkt an oder senden Sie die wichtigsten Eckdaten – die Rückmeldung erfolgt schnell und konkret.
+                </p>
+
+                <!-- 24/7 Notdienst Card -->
+                <div class="emergency-info-card">
+                    <h3 class="emergency-card-title">24/7 Notdienst</h3>
+                    <a href="tel:+43XXXXXXXXX" class="emergency-card-phone">
+                        Telefon: +43 XXX XXX XXX
+                    </a>
+                    <a href="mailto:office@feichtinger.at" class="emergency-card-email">
+                        E-Mail: office@feichtinger.at
+                    </a>
+                </div>
+            </div>
+
+            <!-- Rechte Spalte: Formular-Card mit Maskottchen-Peeking-Bereich -->
+            <div class="contact-form-wrapper">
+
+                <!-- Platzhalter für das Maskottchen oben am Formularrand -->
+                <div class="form-mascot-peek" id="contact-mascot-peek">
+                    <!-- Hier bindest du deine Lottie-Animation ein -->
+                    <img src="images/mascot-peek-placeholder.png" alt="Feichtinger Maskottchen" class="mascot-peek-img">
+                </div>
+
+                <!-- Formular Card -->
+                <div class="contact-form-container">
+                    <form id="contactForm" class="dark-inquiry-form">
+
+                        <!-- Feld: Name -->
+                        <div class="form-field-group">
+                            <label for="contactName">Name</label>
+                            <input type="text" id="contactName" name="name" placeholder="Ihr Name" required>
+                        </div>
+
+                        <!-- Feld: Telefon -->
+                        <div class="form-field-group">
+                            <label for="contactPhone">Telefon</label>
+                            <input type="tel" id="contactPhone" name="phone" placeholder="+43 ..." required>
+                        </div>
+
+                        <!-- Feld: Schaden kurz beschreiben -->
+                        <div class="form-field-group">
+                            <label for="contactScope">Schaden kurz beschreiben</label>
+                            <textarea id="contactScope" name="scope" rows="3" placeholder="Was ist passiert?" required></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" id="btnSubmitContact" class="btn-cyan-submit">
+                            Anfrage senden
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
 
 
 
@@ -332,6 +401,19 @@
             navMenu.classList.remove('open');
         });
     });
+</script>
+<script>
+    const contactForm = document.getElementById('contactForm');
+    const btnSubmit = document.getElementById('btnSubmitContact');
+
+    if (contactForm && btnSubmit) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            btnSubmit.textContent = 'Danke – wir melden uns!';
+            btnSubmit.classList.add('submitted');
+            btnSubmit.disabled = true;
+        });
+    }
 </script>
 </body>
 </html>

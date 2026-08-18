@@ -222,3 +222,31 @@
         padding: 6px 14px;
     }
 }
+
+@media (max-width: 1024px) {
+    .contact-cta-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .emergency-info-card {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .contact-cta-section {
+        padding: 4rem 0 5rem 0;
+    }
+
+    .contact-form-container {
+        padding: 1.6rem;
+    }
+
+    .form-mascot-peek {
+        top: -55px;
+        right: 15px;
+        width: 75px;
+        height: 75px;
+    }
+}
