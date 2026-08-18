@@ -11,6 +11,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
 
+    <!-- Offizieller Lottie Web Player -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -94,20 +97,24 @@
                 </div>
             </div>
 
-            <!-- Rechte Spalte: Lottie / Maskottchen Card -->
+            <!-- Rechte Spalte: Lottie Search Animation -->
             <div class="hero-visual">
                 <div class="mascot-card">
-                    <!-- Platzhalter für deinen Lottie-Player / SVG Container -->
                     <div id="hero-lottie-container" class="lottie-container">
-                        <!-- Hier bindest du deine Lottie Animation ein -->
-                        <img src="images/mascot-placeholder.png" alt="Feichtinger Maskottchen" class="mascot-fallback">
+                        <lottie-player
+                                src="images/animations/search.json"
+                                background="transparent"
+                                speed="1"
+                                style="width: 100%; max-width: 320px; height: auto;"
+                                loop
+                                autoplay>
+                        </lottie-player>
                     </div>
                 </div>
             </div>
 
         </div>
 
-        <!-- 3er USP Bar unterhalb des Hero-Bereichs -->
         <!-- 3er USP Bar Container -->
         <div class="container hero-usp-bar-container">
             <div class="hero-usp-pill-container">
@@ -277,11 +284,17 @@
     <section id="ueber-uns" class="about-feichtinger-section">
         <div class="container about-feichtinger-grid">
 
-            <!-- Linke Spalte: Dark Mascot Card mit Text unten -->
+            <!-- Linke Spalte: Dark Mascot Card mit Thumb-Up Animation -->
             <div class="about-mascot-card">
                 <div id="about-lottie-container" class="lottie-container">
-                    <!-- Platzhalter für deine Lottie-Animation -->
-                    <img src="images/mascot-placeholder.png" alt="Feichtinger Maskottchen" class="mascot-fallback">
+                    <lottie-player
+                            src="images/animations/thumb-up.json"
+                            background="transparent"
+                            speed="1"
+                            style="width: 100%; max-width: 260px; height: auto;"
+                            loop
+                            autoplay>
+                    </lottie-player>
                 </div>
                 <div class="mascot-subline">
                     Vor Ort. Präzise. Ohne unnötige Öffnungen.
@@ -336,13 +349,18 @@
                 </div>
             </div>
 
-            <!-- Rechte Spalte: Formular-Card mit Maskottchen-Peeking-Bereich -->
+            <!-- Rechte Spalte: Formular-Card mit Peeking Maskottchen -->
             <div class="contact-form-wrapper">
 
-                <!-- Platzhalter für das Maskottchen oben am Formularrand -->
-                <div class="form-mascot-peek" id="contact-mascot-peek">
-                    <!-- Hier bindest du deine Lottie-Animation ein -->
-                    <img src="images/mascot-peek-placeholder.png" alt="Feichtinger Maskottchen" class="mascot-peek-img">
+                <!-- Maskottchen oben am Formularrand (initial versteckt) -->
+                <div class="form-mascot-peek" id="contact-mascot-peek" style="opacity: 0; transition: opacity 0.3s ease;">
+                    <lottie-player
+                            id="formPeekLottie"
+                            src="images/animations/from-button-up.json"
+                            background="transparent"
+                            speed="1"
+                            style="width: 100%; height: 100%;">
+                    </lottie-player>
                 </div>
 
                 <!-- Formular Card -->
@@ -378,101 +396,100 @@
 
         </div>
     </section>
+</main>
 
-    <!-- Footer Section -->
-    <footer class="site-footer">
+<!-- Footer Section -->
+<footer class="site-footer">
 
-        <!-- Zentrierter Back-to-Top Pfeil oben -->
-        <div class="footer-top-action">
-            <a href="#home" class="btn-scroll-top" aria-label="Nach oben scrollen">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="18 15 12 9 6 15"></polyline>
-                </svg>
-            </a>
-        </div>
+    <!-- Zentrierter Back-to-Top Pfeil oben -->
+    <div class="footer-top-action">
+        <a href="#home" class="btn-scroll-top" aria-label="Nach oben scrollen">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="18 15 12 9 6 15"></polyline>
+            </svg>
+        </a>
+    </div>
 
-        <div class="container">
-            <!-- 4-Spalten Grid -->
-            <div class="footer-main-grid">
+    <div class="container">
+        <!-- 4-Spalten Grid -->
+        <div class="footer-main-grid">
 
-                <!-- Spalte 1: Logo, Beschreibung & Socials -->
-                <div class="footer-col-brand">
-                    <a href="#home" class="footer-brand-logo">
-                        <img src="images/logo.svg" alt="Feichtinger Ortungstechnik" class="site-logo">
+            <!-- Spalte 1: Logo, Beschreibung & Socials -->
+            <div class="footer-col-brand">
+                <a href="#home" class="footer-brand-logo">
+                    <img src="images/logo.svg" alt="Feichtinger Ortungstechnik" class="site-logo">
+                </a>
+                <p class="footer-brand-text">
+                    Professionelle Leckortung, klare Berichte und schnelle Hilfe im Schadensfall.
+                </p>
+                <div class="footer-social-links">
+                    <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
                     </a>
-                    <p class="footer-brand-text">
-                        Professionelle Leckortung, klare Berichte und schnelle Hilfe im Schadensfall.
-                    </p>
-                    <div class="footer-social-links">
-                        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-                        </a>
-                        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                        </a>
-                        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                        </a>
-                    </div>
+                    <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
                 </div>
-
-                <!-- Spalte 2: Links -->
-                <div class="footer-col-nav">
-                    <span class="footer-heading">LINKS</span>
-                    <ul class="footer-nav-list">
-                        <li><a href="#leistungen">Leistungen</a></li>
-                        <li><a href="#ablauf">Ablauf</a></li>
-                        <li><a href="#ueber-uns">Über uns</a></li>
-                        <li><a href="#kontakt">Kontakt</a></li>
-                    </ul>
-                </div>
-
-                <!-- Spalte 3: Kontakt -->
-                <div class="footer-col-contact">
-                    <span class="footer-heading">KONTAKT</span>
-                    <div class="footer-contact-details">
-                        <p>Telefon: +43 XXX XXX XXX</p>
-                        <p>E-Mail: office@feichtinger.at</p>
-                        <p class="footer-notdienst-status">Notdienst 24/7 erreichbar</p>
-                    </div>
-                </div>
-
-                <!-- Spalte 4: Trust Card Rechts -->
-                <div class="footer-col-trust">
-                    <div class="footer-trust-card">
-                        <div class="trust-card-header">
-                            <svg class="trust-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                                <polyline points="9 12 11 14 15 10"></polyline>
-                            </svg>
-                            <h4>Ihre Experten für zerstörungsfreie Ortung</h4>
-                        </div>
-                        <p>
-                            Platzhalter für Zertifizierungen, Partner- oder Qualitätsbadges.
-                        </p>
-                    </div>
-                </div>
-
             </div>
 
-            <!-- Untere Copyright- & Legal-Zeile -->
-            <div class="footer-bottom-bar">
+            <!-- Spalte 2: Links -->
+            <div class="footer-col-nav">
+                <span class="footer-heading">LINKS</span>
+                <ul class="footer-nav-list">
+                    <li><a href="#leistungen">Leistungen</a></li>
+                    <li><a href="#ablauf">Ablauf</a></li>
+                    <li><a href="#ueber-uns">Über uns</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                </ul>
+            </div>
+
+            <!-- Spalte 3: Kontakt -->
+            <div class="footer-col-contact">
+                <span class="footer-heading">KONTAKT</span>
+                <div class="footer-contact-details">
+                    <p>Telefon: +43 XXX XXX XXX</p>
+                    <p>E-Mail: office@feichtinger.at</p>
+                    <p class="footer-notdienst-status">Notdienst 24/7 erreichbar</p>
+                </div>
+            </div>
+
+            <!-- Spalte 4: Trust Card Rechts -->
+            <div class="footer-col-trust">
+                <div class="footer-trust-card">
+                    <div class="trust-card-header">
+                        <svg class="trust-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            <polyline points="9 12 11 14 15 10"></polyline>
+                        </svg>
+                        <h4>Ihre Experten für zerstörungsfreie Ortung</h4>
+                    </div>
+                    <p>
+                        Platzhalter für Zertifizierungen, Partner- oder Qualitätsbadges.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Untere Copyright- & Legal-Zeile -->
+        <div class="footer-bottom-bar">
             <span class="footer-copyright">
                 © 2026 Ortungstechnik Feichtinger. Alle Rechte vorbehalten.
             </span>
-                <div class="footer-legal-links">
-                    <a href="impressum.html">Impressum</a>
-                    <a href="datenschutz.html">Datenschutz</a>
-                </div>
+            <div class="footer-legal-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
             </div>
         </div>
+    </div>
+</footer>
 
-    </footer>
-
-</main>
-
-<!-- Einfaches Script für Mobile Toggle -->
+<!-- Interaktive Scripts -->
 <script>
+    // Mobile Nav Toggle
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
     const navLinks = document.querySelectorAll('.nav-menu a');
@@ -488,17 +505,28 @@
             navMenu.classList.remove('open');
         });
     });
-</script>
-<script>
+
+    // Formular Submit: Button anpassen + Peeking-Animation 1x abspielen
     const contactForm = document.getElementById('contactForm');
     const btnSubmit = document.getElementById('btnSubmitContact');
+    const mascotPeekContainer = document.getElementById('contact-mascot-peek');
+    const formPeekLottie = document.getElementById('formPeekLottie');
 
     if (contactForm && btnSubmit) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
+
+            // 1. Button Status ändern
             btnSubmit.textContent = 'Danke – wir melden uns!';
             btnSubmit.classList.add('submitted');
             btnSubmit.disabled = true;
+
+            // 2. Peeking Maskottchen einblenden & 1x abspielen
+            if (mascotPeekContainer && formPeekLottie) {
+                mascotPeekContainer.style.opacity = '1';
+                formPeekLottie.stop();
+                formPeekLottie.play();
+            }
         });
     }
 </script>
