@@ -250,3 +250,36 @@
         height: 75px;
     }
 }
+
+@media (max-width: 1024px) {
+    .footer-main-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .site-footer {
+        padding: 2.5rem 0;
+    }
+
+    .footer-top-action {
+        margin-bottom: 2.5rem;
+    }
+
+    .footer-main-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+
+    .footer-bottom-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.25rem;
+    }
+
+    .footer-legal-links {
+        gap: 1.5rem;
+    }
+}
