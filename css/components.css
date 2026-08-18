@@ -1,0 +1,387 @@
+/* =========================================
+   1. FLOATING HEADER & NAVIGATION
+   ========================================= */
+/* 1. Header fixieren und schwebend über den Hero-Hintergrund legen */
+.header-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1.2rem 0;
+    background: transparent;
+}
+
+.topbar {
+    width: min(1200px, calc(100% - 2.5rem));
+    min-height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 1.4rem;
+    margin: 0 auto;
+    background-color: var(--color-dark-bg); /* #120819 */
+    border: 1px solid var(--color-border-dark);
+    border-radius: var(--radius-pill);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.site-logo {
+    height: 80px;
+    width: auto;
+    display: block;
+    margin: -15px;
+    margin-left: 0;
+}
+
+.nav-menu ul {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--color-primary-cyan);
+}
+
+.nav-mobile-cta {
+    display: none;
+}
+
+/* 24/7 Notdienst Button (Cyan Pill) */
+.btn-emergency {
+    background-color: var(--color-primary-cyan);
+    color: var(--color-dark-bg);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 0.92rem;
+    padding: 0.75rem 1.6rem;
+    border-radius: var(--radius-pill);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.btn-emergency:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(0, 206, 209, 0.4);
+}
+
+/* Mobile Hamburger */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.nav-toggle span {
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-primary-cyan);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+.nav-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* =========================================
+   2. HERO SECTION
+   ========================================= */
+/* 2. Hero-Section bis ganz oben an den Bildschirmrand ziehen */
+.hero-section {
+    margin-top: 0;
+    padding-top: calc(72px + 3rem); /* Schafft oben Platz für die fixe Navigationsbar */
+    padding-bottom: 5rem;
+    background:
+            radial-gradient(ellipse 70% 55% at 50% 35%, rgba(0, 206, 209, 0.25) 0%, rgba(50, 9, 100, 0.7) 45%, #120819 85%),
+            #120819;
+    color: var(--color-text-light);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+/* Badge */
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(0, 206, 209, 0.1);
+    border: 1px solid rgba(0, 206, 209, 0.3);
+    color: var(--color-primary-cyan);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: var(--radius-pill);
+    margin-bottom: 2rem;
+}
+
+.badge-check {
+    font-size: 0.9rem;
+}
+
+/* Headlines & Text */
+.hero-title {
+    font-size: clamp(2.5rem, 4.5vw, 4.2rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+    color: #FFFFFF;
+}
+
+.hero-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #B5B0BE;
+    max-width: 520px;
+    margin-bottom: 2.5rem;
+}
+
+/* Button Group */
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.btn-primary {
+    background-color: var(--color-primary-cyan);
+    color: var(--color-dark-bg);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.95rem 1.8rem;
+    border-radius: var(--radius-pill);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(0, 206, 209, 0.45);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-text-light);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.95rem 1.8rem;
+    border-radius: var(--radius-pill);
+    transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* 36h Hint */
+.hero-usp-hint {
+    font-size: 0.95rem;
+    color: #B5B0BE;
+}
+
+.highlight-cyan {
+    color: var(--color-primary-cyan);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+}
+
+/* Maskottchen Card */
+.mascot-card {
+    background: radial-gradient(circle at center, rgba(50, 9, 100, 0.5) 0%, rgba(18, 8, 25, 0.7) 100%);
+    border: 1.5px solid var(--color-border-dark);
+    border-radius: 40px;
+    padding: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+    min-height: 480px;
+}
+
+.lottie-container {
+    width: 100%;
+    max-width: 340px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mascot-fallback {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+/* =========================================
+   3. HERO USP BAR (3-teilige Pill-Bar)
+   ========================================= */
+.hero-usp-bar-container {
+    margin-top: 4.5rem;
+}
+
+/* Äußerer abgerundeter Container */
+.hero-usp-pill-container {
+    background: rgba(18, 8, 25, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 206, 209, 0.2);
+    border-radius: 999px;
+    padding: 10px 12px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* Einzelne innere Karten */
+.usp-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: all 0.25s ease;
+}
+
+.usp-card:hover {
+    background: rgba(0, 206, 209, 0.08);
+    border-color: rgba(0, 206, 209, 0.3);
+    transform: translateY(-1px);
+}
+
+/* Türkise Outline Icons */
+.usp-icon-svg {
+    width: 22px;
+    height: 22px;
+    stroke: var(--color-primary-cyan);
+    flex-shrink: 0;
+}
+
+.usp-text {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #FFFFFF;
+    white-space: nowrap;
+}
+
+/* =========================================
+   LEISTUNGEN SECTION
+   ========================================= */
+.services-section {
+    background-color: var(--color-bg-white);
+    padding: 6rem 0;
+}
+
+.services-header {
+    max-width: 780px;
+    margin: 0 auto 4rem auto;
+}
+
+.services-title {
+    font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+    color: var(--color-text-dark);
+    margin-bottom: 1.25rem;
+    line-height: 1.15;
+}
+
+.services-subtitle {
+    font-size: 1.05rem;
+    color: #6A6472;
+    line-height: 1.6;
+}
+
+/* 4-Spalten Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+/* Einzelne Karte */
+.service-card {
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 28px;
+    padding: 2.2rem 1.8rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 206, 209, 0.4);
+    box-shadow: 0 16px 36px rgba(18, 8, 25, 0.06);
+}
+
+/* Icon Box oben */
+.service-icon-box {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 1.75rem;
+}
+
+.service-icon-box svg {
+    width: 32px;
+    height: 32px;
+    stroke: var(--color-primary-cyan);
+}
+
+.service-name {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    line-height: 1.25;
+    margin-bottom: 1rem;
+}
+
+.service-description {
+    font-size: 0.95rem;
+    color: #6A6472;
+    line-height: 1.6;
+}

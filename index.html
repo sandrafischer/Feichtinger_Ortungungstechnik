@@ -6,7 +6,7 @@
     <title>Feichtinger Ortungstechnik | Schnelle Leckortung ohne Aufstemmen</title>
     <meta name="description" content="Professionelle und zerstörungsfreie Leckortung, Thermografie und Schadensanalyse in Österreich. 24/7 Notdienst.">
 
-    <!-- Google Fonts: Cabin (Body) + Space Grotesk (Headlines) -->
+    <!-- Google Fonts: Cabin + Space Grotesk -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
@@ -15,23 +15,238 @@
 </head>
 <body>
 
-<!-- Header / Sticky Navigation -->
-<header id="header">
-    <!-- Bauen wir in Schritt 2 -->
+<!-- Header / Sticky Floating Topbar -->
+<header class="header-wrapper">
+    <div class="topbar">
+        <!-- 1. Logo -->
+        <a href="#" class="logo-link" aria-label="Zur Startseite">
+            <img src="images/logo.svg" alt="Feichtinger Ortungstechnik" class="site-logo">
+        </a>
+
+        <!-- Hamburger Button für Mobile -->
+        <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- 2. Navigation Links -->
+        <nav class="nav-menu" id="navMenu">
+            <ul>
+                <li><a href="#leistungen">Leistungen</a></li>
+                <li><a href="#ablauf">Ablauf</a></li>
+                <li><a href="#ueber-uns">Über uns</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+            <div class="nav-mobile-cta">
+                <a href="tel:+43XXXXXXXXX" class="btn-emergency">
+                    <span class="phone-icon">📞</span> 24/7 Notdienst Anrufen
+                </a>
+            </div>
+        </nav>
+
+        <!-- 3. Notdienst Button (Desktop) -->
+        <div class="nav-cta-desktop">
+            <a href="tel:+43XXXXXXXXX" class="btn-emergency">
+                <span class="phone-icon">📞</span> 24/7 Notdienst Anrufen
+            </a>
+        </div>
+    </div>
 </header>
 
 <main>
-    <!-- Hero Section -->
+    <!-- Hero Section mit Deep Dark Gradient -->
+    <section class="hero-section" id="home">
+        <div class="container hero-grid">
+
+            <!-- Linke Spalte: Content -->
+            <div class="hero-content">
+
+                <!-- Status Badge oben -->
+                <div class="hero-badge">
+                    <span class="badge-check">✓</span>
+                    <span>Zerstörungsfreie Ortung • 24/7 Notdienst</span>
+                </div>
+
+                <!-- Haupt-Headline -->
+                <h1 class="hero-title">
+                    Schnelle Leckortung ohne Aufstemmen.
+                </h1>
+
+                <!-- Fließtext -->
+                <p class="hero-text">
+                    Wir finden Wasserlecks, Leitungsverläufe und versteckte Schäden mit moderner Messtechnik – sauber dokumentiert, präzise lokalisiert und rasch vor Ort.
+                </p>
+
+                <!-- CTA Button Gruppe -->
+                <div class="hero-actions">
+                    <a href="tel:+43XXXXXXXXX" class="btn-primary">
+                        <span>📞</span> Jetzt Notdienst anrufen
+                    </a>
+                    <a href="#kontakt" class="btn-secondary">
+                        Schaden prüfen lassen
+                    </a>
+                </div>
+
+                <!-- 36h Termin Hinweis -->
+                <div class="hero-usp-hint">
+                    <span class="highlight-cyan">36h</span> bis zum Termin • Bericht am selben Tag
+                </div>
+            </div>
+
+            <!-- Rechte Spalte: Lottie / Maskottchen Card -->
+            <div class="hero-visual">
+                <div class="mascot-card">
+                    <!-- Platzhalter für deinen Lottie-Player / SVG Container -->
+                    <div id="hero-lottie-container" class="lottie-container">
+                        <!-- Hier bindest du deine Lottie Animation ein -->
+                        <img src="images/mascot-placeholder.png" alt="Feichtinger Maskottchen" class="mascot-fallback">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 3er USP Bar unterhalb des Hero-Bereichs -->
+        <!-- 3er USP Bar Container -->
+        <div class="container hero-usp-bar-container">
+            <div class="hero-usp-pill-container">
+
+                <!-- USP Card 1 -->
+                <div class="usp-card">
+                    <svg class="usp-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    <span class="usp-text">24/7 Notdienst Service</span>
+                </div>
+
+                <!-- USP Card 2 -->
+                <div class="usp-card">
+                    <svg class="usp-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                        <path d="m9 16 2 2 4-4"></path>
+                    </svg>
+                    <span class="usp-text">In 36h beim Kunden</span>
+                </div>
+
+                <!-- USP Card 3 -->
+                <div class="usp-card">
+                    <svg class="usp-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <path d="m9 15 2 2 4-4"></path>
+                    </svg>
+                    <span class="usp-text">Bericht noch am selben Tag</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- Leistungen Section -->
-    <!-- Ablauf Section -->
-    <!-- Über uns Section -->
-    <!-- Kontakt / CTA Section -->
+    <section id="leistungen" class="services-section">
+        <div class="container">
+
+            <!-- Header -->
+            <div class="services-header text-center">
+                <span class="section-tag">LEISTUNGEN</span>
+                <h2 class="services-title">
+                    Präzise Ortungstechnik<br>für jeden Wasserschaden.
+                </h2>
+                <p class="services-subtitle">
+                    Von der ersten Vermutung bis zur belastbaren Schaden-Dokumentation: moderne Messmethoden machen Ursachen sichtbar, bevor Wände geöffnet werden müssen.
+                </p>
+            </div>
+
+            <!-- 4-Spalten Grid der Services -->
+            <div class="services-grid">
+
+                <!-- Karte 1: Leckortung -->
+                <div class="service-card">
+                    <div class="service-icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="22" y1="12" x2="18" y2="12"></line>
+                            <line x1="6" y1="12" x2="2" y2="12"></line>
+                            <line x1="12" y1="6" x2="12" y2="2"></line>
+                            <line x1="12" y1="22" x2="12" y2="18"></line>
+                        </svg>
+                    </div>
+                    <h3 class="service-name">Leckortung & Leitungsortung</h3>
+                    <p class="service-description">
+                        Nicht-invasive Lokalisierung von Wasserverlusten, Feuchtequellen und Leitungsverläufen in Böden, Wänden und Decken.
+                    </p>
+                </div>
+
+                <!-- Karte 2: Kamerainspektion -->
+                <div class="service-card">
+                    <div class="service-icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                            <circle cx="12" cy="13" r="4"></circle>
+                        </svg>
+                    </div>
+                    <h3 class="service-name">Kamerainspektion & Endoskopie</h3>
+                    <p class="service-description">
+                        Optische Prüfung schwer zugänglicher Bereiche – ideal für Hohlräume, Rohrsysteme und verdeckte Schadstellen.
+                    </p>
+                </div>
+
+                <!-- Karte 3: Spezialprüfungen -->
+                <div class="service-card">
+                    <div class="service-icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="service-name">Spezialprüfungen</h3>
+                    <p class="service-description">
+                        Farbstoff-, Rauchgas- und Druckprüfungen zeigen auch komplexe Leckagen nachvollziehbar und sicher auf.
+                    </p>
+                </div>
+
+                <!-- Karte 4: Blower-Door -->
+                <div class="service-card">
+                    <div class="service-icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="service-name">Blower-Door & Thermografie</h3>
+                    <p class="service-description">
+                        Wärmebilder und Luftdichtheitsmessungen machen Schwachstellen sichtbar – schnell, sauber und objektiv.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+
 </main>
 
-<!-- Footer -->
-<footer id="footer">
-    <!-- Bauen wir im letzten Schritt -->
-</footer>
+<!-- Einfaches Script für Mobile Toggle -->
+<script>
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    const navLinks = document.querySelectorAll('.nav-menu a');
 
+    navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('active');
+        navMenu.classList.toggle('open');
+    });
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navToggle.classList.remove('active');
+            navMenu.classList.remove('open');
+        });
+    });
+</script>
 </body>
 </html>
