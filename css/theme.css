@@ -1,0 +1,37 @@
+:root {
+    /* Brand Primary Colors */
+    --color-primary-cyan: #00ced1;       /* Leuchtendes Türkis / Cyan */
+    --color-primary-purple: #320964;     /* Deep Violett */
+    --color-accent-teal: #007f8c;        /* Dunkleres Accent Cyan/Blau */
+    --color-dark-bg: #120819;            /* Header / Footer / Dark Base */
+
+    /* Neutral & Background Colors */
+    --color-bg-white: #FFFFFF;
+    --color-bg-light: #F8F9FA;
+    --color-text-dark: #120819;
+    --color-text-light: #F4F0F8;
+    --color-text-muted: #8E8798;
+    --color-border-dark: rgba(255, 255, 255, 0.1);
+    --color-card-dark: rgba(50, 9, 100, 0.35); /* Frosted Dark Card */
+    --color-card-light: #FFFFFF;
+
+    /* Hero & CTA Background Gradients */
+    --gradient-hero: radial-gradient(circle at 80% 20%, #320964 0%, #120819 60%, #08030C 100%);
+    --gradient-cta: radial-gradient(circle at 20% 80%, #320964 0%, #120819 65%, #08030C 100%);
+    --gradient-accent: linear-gradient(135deg, var(--color-primary-cyan), var(--color-accent-teal));
+
+    /* Spacing Tokens */
+    --space-xs: 8px;
+    --space-sm: 16px;
+    --space-md: 24px;
+    --space-lg: 32px;
+    --space-xl: 48px;
+    --space-2xl: 64px;
+    --space-3xl: 96px;
+
+    /* Border Radius */
+    --radius-sm: 12px;
+    --radius-md: 20px;
+    --radius-lg: 28px;
+    --radius-pill: 999px;
+}
