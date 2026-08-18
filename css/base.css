@@ -47,6 +47,6 @@ img {
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--color-primary-cyan);
+    color: var(--color-accent-teal);
     margin-bottom: 0.85rem;
 }

@@ -168,3 +168,57 @@
         padding: 1.8rem 1.5rem;
     }
 }
+
+@media (max-width: 1024px) {
+    .process-steps-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .process-steps-text {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .process-steps-section {
+        padding: 4rem 0;
+    }
+
+    .process-card-item {
+        padding: 1.2rem 1.4rem;
+        gap: 1rem;
+    }
+
+    .process-step-num {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .about-feichtinger-grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+    }
+
+    .about-mascot-card {
+        max-width: 480px;
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .about-feichtinger-section {
+        padding: 4rem 0;
+    }
+
+    .about-badges-group {
+        gap: 8px;
+    }
+
+    .about-badge {
+        font-size: 0.8rem;
+        padding: 6px 14px;
+    }
+}

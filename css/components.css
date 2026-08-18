@@ -220,7 +220,7 @@
     color: var(--color-primary-cyan);
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 700;
-    font-size: 1.15rem;
+    font-size: 2.15rem;
 }
 
 /* Maskottchen Card */
@@ -294,7 +294,7 @@
 .usp-icon-svg {
     width: 22px;
     height: 22px;
-    stroke: var(--color-primary-cyan);
+    stroke: var(--color-accent-teal);
     flex-shrink: 0;
 }
 
@@ -384,4 +384,151 @@
     font-size: 0.95rem;
     color: #6A6472;
     line-height: 1.6;
+}
+
+/* =========================================
+   ABLAUF SECTION
+   ========================================= */
+.process-steps-section {
+    background-color: var(--color-bg-white);
+    padding: 6rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.process-steps-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 4.5rem;
+    align-items: center;
+}
+
+.process-steps-title {
+    font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+    color: var(--color-text-dark);
+    margin-bottom: 1.5rem;
+    line-height: 1.15;
+}
+
+.process-steps-text {
+    font-size: 1.05rem;
+    color: #6A6472;
+    line-height: 1.65;
+    max-width: 520px;
+}
+
+/* Liste der 3 Karten rechts */
+.process-cards-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.process-card-item {
+    background-color: #F8F9FA;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 24px;
+    padding: 1.6rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.process-card-item:hover {
+    transform: translateX(4px);
+    border-color: rgba(0, 206, 209, 0.35);
+    box-shadow: 0 8px 24px rgba(18, 8, 25, 0.04);
+}
+
+/* Ziffern 01, 02, 03 */
+.process-step-num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--color-primary-cyan);
+    flex-shrink: 0;
+}
+
+.process-step-content {
+    font-size: 0.98rem;
+    color: #4A4550;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* =========================================
+   ÜBER UNS SECTION
+   ========================================= */
+.about-feichtinger-section {
+    background-color: var(--color-bg-white);
+    padding: 6rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.about-feichtinger-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 4.5rem;
+    align-items: center;
+}
+
+/* Dunkle Maskottchen-Karte links */
+.about-mascot-card {
+    background: radial-gradient(circle at center, rgba(50, 9, 100, 0.5) 0%, rgba(18, 8, 25, 0.95) 100%);
+    border: 1.5px solid rgba(0, 0, 0, 0.1);
+    border-radius: 36px;
+    padding: 3rem 2rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 20px 40px rgba(18, 8, 25, 0.12);
+}
+
+.about-mascot-card .lottie-container {
+    width: 100%;
+    max-width: 260px;
+    margin-bottom: 2rem;
+}
+
+.mascot-subline {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #B5B0BE;
+    text-align: center;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+}
+
+/* Content rechts */
+.about-feichtinger-title {
+    font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+    color: var(--color-text-dark);
+    margin-bottom: 1.5rem;
+    line-height: 1.15;
+}
+
+.about-feichtinger-text {
+    font-size: 1.05rem;
+    color: #6A6472;
+    line-height: 1.65;
+    margin-bottom: 2.2rem;
+}
+
+/* Badges Leiste */
+.about-badges-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.about-badge {
+    background-color: rgba(0, 127, 140, 0.12); /* Zartes Accent Teal */
+    color: var(--color-accent-teal);           /* #007f8c */
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: var(--radius-pill);
+    white-space: nowrap;
 }
