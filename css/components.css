@@ -272,6 +272,7 @@
     align-items: center;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     min-height: 480px;
+    overflow: hidden;
 }
 
 .lottie-container {
@@ -535,6 +536,7 @@
     align-items: center;
     justify-content: center;
     box-shadow: 0 5px 5px rgba(13, 4, 20, 0.35);
+    overflow: hidden;
 }
 
 .about-mascot-card .lottie-container {
