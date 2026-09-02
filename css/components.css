@@ -43,7 +43,7 @@
 .nav-menu a {
     color: var(--color-text-light);
     font-size: 0.95rem;
-    font-weight: 500;
+    font-weight: 400;
     transition: color 0.2s ease;
 }
 
@@ -113,11 +113,18 @@
 /* 2. Hero-Section bis ganz oben an den Bildschirmrand ziehen */
 .hero-section {
     margin-top: 0;
-    padding-top: calc(72px + 3rem); /* Schafft oben Platz für die fixe Navigationsbar */
+    padding-top: calc(72px + 3rem);
     padding-bottom: 5rem;
+    /* Weicher, dezenter Verlauf: sanfter violetter Hauch mittig, außen sehr dunkles Petrol/Türkis */
     background:
-            radial-gradient(ellipse 70% 55% at 50% 35%, rgba(0, 206, 209, 0.25) 0%, rgba(50, 9, 100, 0.7) 45%, #120819 85%),
-            #120819;
+            radial-gradient(
+                    ellipse 85% 70% at 50% 40%,
+                    #190621 0%,                      /* 1. Ganz innen: Fast schwarzes, sehr dunkles Lila */
+                    rgba(52, 14, 72, 0.5) 40%,    /* 2. Ring darum: Dein bisheriges dezentes Lila */
+                    rgba(13, 31, 38, 0.85) 60%,     /* 3. Weiter außen: Übergang ins dunkle Petrol */
+                    #051418 100%                    /* 4. Ganz am Rand: Dunkles Basis-Petrol */
+            ),
+            #051418;
     color: var(--color-text-light);
     position: relative;
     overflow: hidden;
@@ -139,7 +146,7 @@
     border: 1px solid rgba(0, 206, 209, 0.3);
     color: var(--color-primary-cyan);
     font-size: 0.85rem;
-    font-weight: 600;
+    font-weight: 500;
     padding: 6px 16px;
     border-radius: var(--radius-pill);
     margin-bottom: 2rem;
@@ -223,16 +230,20 @@
     font-size: 2.15rem;
 }
 
-/* Maskottchen Card */
+/* =========================================
+   HERO MASCOT CARD
+   ========================================= */
 .mascot-card {
-    background: radial-gradient(circle at center, rgba(50, 9, 100, 0.5) 0%, rgba(18, 8, 25, 0.7) 100%);
-    border: 1.5px solid var(--color-border-dark);
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 40px;
     padding: 2.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     min-height: 480px;
 }
 
@@ -252,57 +263,60 @@
 
 
 /* =========================================
-   3. HERO USP BAR (3-teilige Pill-Bar)
+   3. HERO USP BAR
    ========================================= */
 .hero-usp-bar-container {
     margin-top: 4.5rem;
 }
 
-/* Äußerer abgerundeter Container */
+/* Äußerer Container: Dezent abgedunkelter Glas-Look */
 .hero-usp-pill-container {
-    background: rgba(18, 8, 25, 0.65);
+    background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(0, 206, 209, 0.2);
-    border-radius: 999px;
-    padding: 10px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 26px;
+    padding: 10px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
-/* Einzelne innere Karten */
+/* Einzelne Karte */
 .usp-card {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 999px;
-    padding: 16px 24px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 18px;
+    padding: 18px 24px;
     display: flex;
     align-items: center;
-    gap: 14px;
-    transition: all 0.25s ease;
+    gap: 16px;
+    cursor: default;
+    transition: background 0.25s ease, transform 0.25s ease;
 }
 
+/* Hover: Leicht heller + sanft 2px nach oben, Border bleibt identisch */
 .usp-card:hover {
-    background: rgba(0, 206, 209, 0.08);
-    border-color: rgba(0, 206, 209, 0.3);
-    transform: translateY(-1px);
+    background: rgba(255, 255, 255, 0.09);
+    transform: translateY(-2px);
 }
 
 /* Türkise Outline Icons */
 .usp-icon-svg {
-    width: 22px;
-    height: 22px;
-    stroke: var(--color-accent-teal);
+    width: 24px;
+    height: 24px;
+    stroke: var(--color-primary-cyan);
     flex-shrink: 0;
 }
 
+/* Text */
 .usp-text {
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 500;
     color: #FFFFFF;
     white-space: nowrap;
+    letter-spacing: -0.01em;
 }
 
 /* =========================================
@@ -313,9 +327,20 @@
     padding: 6rem 0;
 }
 
+/* Header zentrieren */
 .services-header {
     max-width: 780px;
     margin: 0 auto 4rem auto;
+    text-align: center; /* Sorgt dafür, dass Tag, H2 und Text zentriert sind */
+}
+
+/* Untertitel explizit zentrieren */
+.services-subtitle {
+    font-size: 1.05rem;
+    color: #6A6472;
+    line-height: 1.6;
+    margin: 0 auto; /* Verhindert Linkslastigkeit */
+    text-align: center;
 }
 
 .services-title {
@@ -323,12 +348,6 @@
     color: var(--color-text-dark);
     margin-bottom: 1.25rem;
     line-height: 1.15;
-}
-
-.services-subtitle {
-    font-size: 1.05rem;
-    color: #6A6472;
-    line-height: 1.6;
 }
 
 /* 4-Spalten Grid */
@@ -474,15 +493,21 @@
 
 /* Dunkle Maskottchen-Karte links */
 .about-mascot-card {
-    background: radial-gradient(circle at center, rgba(50, 9, 100, 0.5) 0%, rgba(18, 8, 25, 0.95) 100%);
-    border: 1.5px solid rgba(0, 0, 0, 0.1);
+    /* 100% deckender Verlauf: Sattes Lila im Zentrum, sehr dunkles Nachtviolett außen */
+    background: radial-gradient(
+            ellipse 90% 80% at 50% 45%,
+            #2e0d42 0%,
+            #1d082c 55%,
+            #0d0414 100%
+    );
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 36px;
-    padding: 3rem 2rem 2rem 2rem;
+    padding: 3.5rem 2.5rem 2.2rem 2.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 20px 40px rgba(18, 8, 25, 0.12);
+    box-shadow: 0 5px 5px rgba(13, 4, 20, 0.35);
 }
 
 .about-mascot-card .lottie-container {
@@ -538,8 +563,15 @@
    ========================================= */
 .contact-cta-section {
     background:
-            radial-gradient(ellipse 65% 55% at 50% 50%, rgba(0, 206, 209, 0.22) 0%, rgba(50, 9, 100, 0.65) 45%, #120819 85%),
-            #120819;
+            radial-gradient(
+                    ellipse 65% 55% at 50% 50%,
+                    #190621 0%,                      /* 1. Ganz innen: Fast schwarzes, sehr dunkles Lila */
+                    rgba(52, 14, 72, 0.5) 45%,    /* 2. Ring darum: Dein bisheriges dezentes Lila */
+                    rgba(13, 31, 38, 0.85) 67%,     /* 3. Weiter außen: Übergang ins dunkle Petrol */
+                    #051418 100%                    /* 4. Ganz am Rand: Dunkles Basis-Petrol */
+            ),
+            #051418;
+
     color: var(--color-text-light);
     padding: 6rem 0 7rem 0;
     position: relative;
@@ -728,30 +760,29 @@
 }
 
 /* =========================================
-   FOOTER SECTION
+   FOOTER SECTION (Kompakter & zentrierter)
    ========================================= */
 .site-footer {
-    background-color: var(--color-dark-bg); /* #120819 */
-    color: var(--color-text-light);
-    padding: 3rem 0 2.5rem 0;
+    background-color: #0d0614;
+    color: #FFFFFF;
+    padding: 3.5rem 0 2.5rem 0;
     position: relative;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Zentrierter Back to Top Button */
 .footer-top-action {
     display: flex;
     justify-content: center;
-    margin-bottom: 3.5rem;
+    margin-bottom: 3rem;
 }
 
 .btn-scroll-top {
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--color-text-light);
+    color: #FFFFFF;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -759,40 +790,44 @@
 }
 
 .btn-scroll-top svg {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
 }
 
 .btn-scroll-top:hover {
     background-color: var(--color-primary-cyan);
     border-color: var(--color-primary-cyan);
-    color: var(--color-dark-bg);
+    color: #0d0614;
     transform: translateY(-3px);
 }
 
-/* 4-Spalten Grid */
+/* 3-Spalten Grid: max-width begrenzt + margin auto rückt alles nach innen */
 .footer-main-grid {
+    max-width: 1120px;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: 1.3fr 0.8fr 1.1fr 1.4fr;
-    gap: 3.5rem;
-    padding-bottom: 4rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    grid-template-columns: 1.5fr 1fr 1.3fr;
+    column-gap: 3.5rem;
+    row-gap: 2.5rem;
+    padding-bottom: 3.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* Spalte 1: Brand */
 .footer-brand-logo {
     display: inline-block;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
 }
 
 .footer-brand-text {
-    font-size: 0.95rem;
-    color: #9C98A5;
-    line-height: 1.6;
+    font-size: 0.9rem;
+    color: #9b94a6;
+    line-height: 1.5;
     margin-bottom: 1.5rem;
-    max-width: 280px;
+    max-width: 270px;
 }
 
+/* Social Icons */
 .footer-social-links {
     display: flex;
     align-items: center;
@@ -800,28 +835,23 @@
 }
 
 .footer-social-links a {
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--color-primary-cyan);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-text-light);
-    transition: all 0.2s ease;
+    transition: opacity 0.2s ease;
 }
 
 .footer-social-links a svg {
-    width: 17px;
-    height: 17px;
+    width: 20px;
+    height: 20px;
 }
 
 .footer-social-links a:hover {
-    background-color: var(--color-primary-cyan);
-    color: var(--color-dark-bg);
+    opacity: 0.8;
 }
 
-/* Headings in Spalten */
+/* Headings */
 .footer-heading {
     display: block;
     font-family: 'Space Grotesk', sans-serif;
@@ -830,19 +860,23 @@
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--color-primary-cyan);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
-/* Spalte 2: Nav List */
+/* Spalte 2: Nav List (engere Abstände, kleinere & dunklere Schrift) */
 .footer-nav-list {
     display: flex;
     flex-direction: column;
-    gap: 0.9rem;
+    gap: 0.55rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .footer-nav-list a {
-    font-size: 0.95rem;
-    color: #9C98A5;
+    font-size: 0.9rem;
+    color: #aba4b5;
+    text-decoration: none;
     transition: color 0.2s ease;
 }
 
@@ -854,76 +888,41 @@
 .footer-contact-details {
     display: flex;
     flex-direction: column;
-    gap: 0.9rem;
-    font-size: 0.95rem;
-    color: #9C98A5;
+    gap: 0.55rem;
+    font-size: 0.9rem;
+    color: #aba4b5;
 }
 
 .footer-notdienst-status {
     color: var(--color-primary-cyan);
     font-weight: 600;
+    font-size: 0.9rem;
     margin-top: 0.25rem;
 }
 
-/* Spalte 4: Trust Card Rechts */
-.footer-trust-card {
-    background-color: rgba(50, 9, 100, 0.35);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 24px;
-    padding: 1.8rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.85rem;
-}
-
-.trust-card-header {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-}
-
-.trust-check-icon {
-    width: 26px;
-    height: 26px;
-    stroke: var(--color-primary-cyan);
-    flex-shrink: 0;
-    margin-top: 2px;
-}
-
-.trust-card-header h4 {
-    font-size: 1.05rem;
-    font-weight: 700;
-    line-height: 1.3;
-    color: #FFFFFF;
-}
-
-.footer-trust-card p {
-    font-size: 0.88rem;
-    color: #9C98A5;
-    line-height: 1.5;
-    margin: 0;
-}
-
-/* Untere Copyright Bar */
+/* Untere Copyright Bar: bündig mit dem zentrierten Grid */
 .footer-bottom-bar {
+    max-width: 1120px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 2rem;
-    font-size: 0.88rem;
-    color: #6C6674;
+    padding-top: 1.8rem;
+    font-size: 0.82rem;
+    color: #6a6473;
 }
 
 .footer-legal-links {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .footer-legal-links a {
-    color: #6C6674;
+    color: #6a6473;
+    text-decoration: none;
     transition: color 0.2s ease;
 }
 
 .footer-legal-links a:hover {
-    color: var(--color-text-light);
+    color: #aba4b5;
 }
