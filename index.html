@@ -471,48 +471,7 @@
     </div>
 </footer>
 
-<!-- Interaktive Scripts -->
-<script>
-    // Mobile Nav Toggle
-    const navToggle = document.getElementById('navToggle');
-    const navMenu = document.getElementById('navMenu');
-    const navLinks = document.querySelectorAll('.nav-menu a');
 
-    navToggle.addEventListener('click', () => {
-        navToggle.classList.toggle('active');
-        navMenu.classList.toggle('open');
-    });
-
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navToggle.classList.remove('active');
-            navMenu.classList.remove('open');
-        });
-    });
-
-    // Formular Submit: Button anpassen + Peeking-Animation 1x abspielen
-    const contactForm = document.getElementById('contactForm');
-    const btnSubmit = document.getElementById('btnSubmitContact');
-    const mascotPeekContainer = document.getElementById('contact-mascot-peek');
-    const formPeekLottie = document.getElementById('formPeekLottie');
-
-    if (contactForm && btnSubmit) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            // 1. Button Status ändern
-            btnSubmit.textContent = 'Danke – wir melden uns!';
-            btnSubmit.classList.add('submitted');
-            btnSubmit.disabled = true;
-
-            // 2. Peeking Maskottchen einblenden & 1x abspielen
-            if (mascotPeekContainer && formPeekLottie) {
-                mascotPeekContainer.style.opacity = '1';
-                formPeekLottie.stop();
-                formPeekLottie.play();
-            }
-        });
-    }
-</script>
+<script src="js/main.js" defer></script>
 </body>
 </html>
