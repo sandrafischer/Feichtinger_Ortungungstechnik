@@ -52,3 +52,10 @@ img {
     color: var(--color-accent-teal);
     margin-bottom: 0.85rem;
 }
+
+.container,
+.services-grid,
+.hero-grid {
+    box-sizing: border-box;
+    max-width: 100%;
+}
