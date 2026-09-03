@@ -222,6 +222,13 @@
     transition: all 0.2s ease;
 }
 
+.btn-primary .btn-phone-svg {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+    flex-shrink: 0;
+}
+
 .btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 0 25px rgba(0, 206, 209, 0.45);
@@ -866,7 +873,7 @@
 /* Spalte 1: Brand */
 .footer-brand-logo {
     display: inline-block;
-    margin-bottom: 1.2rem;
+    margin-bottom: 0;
 }
 
 .footer-brand-text {
@@ -987,7 +994,6 @@
 
 .legal-page-main {
     padding-top: calc(72px + 3.5rem);
-    padding-bottom: 6rem;
     min-height: 80vh;
 }
 
@@ -1152,4 +1158,54 @@
 .about-mascot-meta .about-badges-group {
     margin-top: 1.25rem;
     justify-content: center;
+}
+
+/* Das seitliche USP-Maskottchen ist standardmäßig auf Desktop unsichtbar */
+.hero-usp-mascot-wrap {
+    display: none;
+}
+
+/* =========================================
+   MOBILE MENU NOTDIENST BUTTON
+   Identisch zur unteren Sticky-Notdienst-Bar
+   ========================================= */
+.nav-mobile-cta {
+    width: 100%;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-mobile-cta .btn-emergency-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 52px;                 /* Höherer Button mit idealer Touch-Fläche */
+    padding: 0.95rem 1.4rem;
+    background-color: var(--color-primary-cyan);
+    color: var(--color-dark-bg);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    border-radius: var(--radius-pill);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35), 0 0 16px rgba(0, 206, 209, 0.3);
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-mobile-cta .btn-emergency-mobile:hover {
+    color: var(--color-dark-bg);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 206, 209, 0.45);
+}
+
+.nav-mobile-cta .btn-emergency-mobile .btn-phone-svg {
+    width: 18px;
+    height: 18px;
+    stroke: var(--color-dark-bg);
+    stroke-width: 2.2;
+    flex-shrink: 0;
 }

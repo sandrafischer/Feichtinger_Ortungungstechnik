@@ -169,7 +169,7 @@
         margin: 0;
     }
 
-    .nav-menu a {
+    .nav-menu ul a {
         font-size: 1.1rem;
         display: block;
         padding: 0.4rem;
@@ -182,7 +182,7 @@
         border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .nav-mobile-cta .btn-emergency {
+    .nav-mobile-cta .btn-emergency-mobile {
         width: 100%;
         justify-content: center;
     }
@@ -191,71 +191,48 @@
 
 /* ==========================================================================
    SMARTPHONE BREAKPOINT (max-width: 640px)
-   Sauberer CSS-Standard: Keine !important Regeln
+   Entzerrt, harmonische Ecken, Logo größer & Maskottchen neben Benefits
    ========================================================================== */
 @media (max-width: 640px) {
-    /* 1. Global Spacings & Container */
+    /* 1. Global Container */
     .container {
-        width: calc(100% - 1.25rem);
-        padding: 0 0.25rem;
+        width: calc(100% - 1.4rem);
+        padding: 0 0.2rem;
     }
 
+    /* Sektionen mit angenehmerem vertikalem Abstand */
     .services-section,
     .process-steps-section,
     .about-feichtinger-section,
     .contact-cta-section {
-        padding: 2rem 0;
+        padding: 2.8rem 0;
     }
 
-    .services-header {
-        margin-bottom: 1.2rem;
-    }
-
-    .section-tag,
-    .section-tag-light {
-        margin-bottom: 0.35rem;
-        font-size: 0.72rem;
-    }
-
-    h2.services-title,
-    h2.process-steps-title,
-    h2.about-feichtinger-title,
-    h2.contact-cta-title {
-        font-size: 1.55rem;
-        margin-bottom: 0.6rem;
-        line-height: 1.2;
-    }
-
-    .services-subtitle,
-    .process-steps-text,
-    .about-feichtinger-text,
-    .contact-cta-subtitle {
-        font-size: 0.88rem;
-        line-height: 1.45;
-        margin-bottom: 1.2rem;
-    }
-
-    /* 2. Header & Logo */
+    /* 2. Topbar & Logos sichtbar vergrößern */
     .topbar {
-        min-height: 48px;
-        padding: 0.3rem 0.85rem;
+        min-height: 54px;
+        padding: 0.35rem 1rem;
         width: calc(100% - 1rem);
     }
 
     .site-logo {
-        height: 38px;
+        height: 55px; /* Vorher 38px -> deutlich klarer lesbar */
         margin: 0;
     }
 
-    .nav-toggle {
-        width: 20px;
-        height: 15px;
+    .footer-brand-logo .site-logo {
+        height: 70px;
     }
 
-    /* 3. Hero: Maximal kompakt */
+    .nav-toggle {
+        width: 22px;
+        height: 16px;
+    }
+
+    /* 3. Hero: Mehr Raum, weniger gedrängt */
     .hero-section {
-        padding-top: calc(56px + 1.2rem);
-        padding-bottom: 1.8rem;
+        padding-top: calc(54px + 2.2rem);
+        padding-bottom: 2.2rem;
     }
 
     .hero-grid {
@@ -265,86 +242,127 @@
     }
 
     .hero-badge {
-        font-size: 0.72rem;
-        padding: 4px 10px;
-        margin-bottom: 0.8rem;
+        font-size: 0.74rem;
+        padding: 5px 12px;
+        margin-bottom: 1.1rem;
+        display: inline-flex;
     }
 
     .hero-title {
-        font-size: 1.75rem;
-        line-height: 1.15;
-        margin-bottom: 0.75rem;
+        font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+        letter-spacing: -0.02em;
     }
 
     .hero-text {
-        font-size: 0.9rem;
-        line-height: 1.45;
-        margin-bottom: 1.2rem;
+        font-size: 0.94rem;
+        line-height: 1.55;
+        margin-bottom: 1.5rem;
+        color: #C0BAC8;
     }
 
-    /* Hero-Visual auf Smartphone ausblenden für sofortigen Viewport-Fokus */
+    /* Desktop Lottie Kasten mobil ausblenden */
     .hero-visual {
         display: none;
     }
 
     .hero-actions {
         flex-direction: column;
-        gap: 0.6rem;
-        margin-bottom: 1rem;
+        gap: 0.75rem;
+        margin-bottom: 1.3rem;
     }
 
     .btn-primary,
     .btn-secondary {
         width: 100%;
         justify-content: center;
-        padding: 0.75rem 1rem;
-        font-size: 0.9rem;
+        padding: 0.85rem 1.2rem;
+        font-size: 0.94rem;
     }
 
     .hero-usp-hint {
-        font-size: 0.8rem;
-        margin-top: 0.2rem;
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
     }
 
     .highlight-cyan {
-        font-size: 1.3rem;
+        font-size: 1.45rem;
     }
 
-    /* Hero USP Bar */
+    /* 4. USP-Bereich: 2 Spalten (Kacheln links, Maskottchen rechts) */
     .hero-usp-bar-container {
-        margin-top: 1.25rem;
+        margin-top: 1.4rem;
     }
 
+    /* Harmonische Ecken-Radien: Außen 16px, Innen 12px (kein Spalt mehr!) */
     .hero-usp-pill-container {
-        padding: 5px;
-        gap: 5px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        padding: 6px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
 
     .usp-card {
-        padding: 8px 12px;
-        border-radius: 12px;
-        gap: 8px;
+        padding: 9px 12px;
+        border-radius: 11px;
+        gap: 10px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.06);
     }
 
     .usp-icon-svg {
-        width: 16px;
-        height: 16px;
+        width: 17px;
+        height: 17px;
     }
 
     .usp-text {
         font-size: 0.82rem;
-        white-space: normal;
+        white-space: nowrap;
     }
 
-    /* 4. LEISTUNGEN: 2x2 Grid ohne Überlauf */
+    /* 4. USP-Bereich: 2 Spalten (Kacheln links, vergrößertes Maskottchen rechts) */
+    .hero-usp-mobile-layout {
+        display: grid;
+        grid-template-columns: 1fr 105px; /* Spalte für das Maskottchen etwas verbreitert */
+        gap: 8px;
+        align-items: center;
+        overflow: visible;
+    }
+
+    /* Maskottchen-Container: lässt Überhang nach rechts sauber zu */
+    .hero-usp-mascot-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 105px;
+        height: 125px;
+        position: relative;
+        overflow: visible; /* Verhindert jedes unschöne Abschneiden */
+    }
+
+    /* Animation: deutlich größer & transparenter Leerraum nach rechts verschoben */
+    .hero-usp-mascot-wrap lottie-player {
+        width: 135%;
+        height: 135%;
+        transform: translateX(32px) scale(1.3);
+        transform-origin: center center;
+        pointer-events: none;
+    }
+
+    /* 5. Leistungen */
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 0.6rem;
+        gap: 0.65rem;
         width: 100%;
     }
 
     .service-card {
-        padding: 0.9rem 0.75rem;
+        padding: 0.95rem 0.8rem;
         border-radius: 16px;
         min-width: 0;
         overflow-wrap: break-word;
@@ -353,9 +371,9 @@
     }
 
     .service-icon-box {
-        width: 28px;
-        height: 28px;
-        margin-bottom: 0.6rem;
+        width: 30px;
+        height: 30px;
+        margin-bottom: 0.7rem;
     }
 
     .service-icon-box svg {
@@ -364,59 +382,50 @@
     }
 
     .service-name {
-        font-size: 0.9rem;
-        line-height: 1.2;
+        font-size: 1.0rem;
+        line-height: 1.22;
         margin-bottom: 0.35rem;
     }
 
     .service-description {
-        font-size: 0.76rem;
+        font-size: 0.78rem;
         line-height: 1.4;
     }
 
-    /* 5. ABLAUF: Schlank & platzsparend */
+    /* 6. Ablauf */
     .process-steps-grid {
-        gap: 1.2rem;
+        gap: 1.4rem;
     }
 
     .process-cards-list {
-        gap: 0.6rem;
+        gap: 0.65rem;
     }
 
     .process-card-item {
-        padding: 0.8rem 0.9rem;
+        padding: 0.85rem 1rem;
         border-radius: 14px;
-        gap: 0.75rem;
+        gap: 0.85rem;
     }
 
-    .process-step-num {
-        font-size: 1rem;
-    }
-
-    .process-step-content {
-        font-size: 0.84rem;
-        line-height: 1.35;
-    }
-
-    /* 6. ÜBER UNS: Horizontale Mini-Card */
+    /* 7. Über uns */
     .about-feichtinger-grid {
         display: flex;
         flex-direction: column;
-        gap: 1.4rem;
+        gap: 1.5rem;
     }
 
     .about-mascot-card {
         max-width: 100%;
-        padding: 0.9rem 1.1rem;
+        padding: 1rem 1.2rem;
         border-radius: 18px;
         display: grid;
-        grid-template-columns: 65px 1fr;
+        grid-template-columns: 70px 1fr;
         align-items: center;
-        gap: 0.9rem;
+        gap: 1rem;
     }
 
     .about-mascot-card .lottie-container {
-        max-width: 65px;
+        max-width: 70px;
         margin-bottom: 0;
     }
 
@@ -428,100 +437,47 @@
     }
 
     .mascot-subline {
-        font-size: 0.78rem;
+        font-size: 0.8rem;
         text-align: left;
         padding-top: 0;
         border-top: none;
     }
 
-    .about-badges-group {
-        gap: 5px;
-    }
-
-    .about-badge {
-        font-size: 0.72rem;
-        padding: 4px 10px;
-    }
-
-    /* 7. KONTAKT: Straffe Formular-Abstände */
+    /* 8. Kontakt */
     .contact-cta-grid {
-        gap: 1.5rem;
-    }
-
-    .emergency-info-card {
-        padding: 1rem;
-        border-radius: 14px;
-    }
-
-    .emergency-card-title {
-        font-size: 1.1rem;
-    }
-
-    .emergency-card-phone {
-        font-size: 0.92rem;
+        gap: 1.6rem;
     }
 
     .contact-form-container {
-        padding: 1.25rem 1rem;
-        border-radius: 18px;
-    }
-
-    .dark-inquiry-form {
-        gap: 0.85rem;
-    }
-
-    .form-field-group input,
-    .form-field-group textarea {
-        padding: 0.7rem 0.85rem;
-        font-size: 0.88rem;
-    }
-
-    .btn-cyan-submit {
-        padding: 0.8rem;
-        font-size: 0.92rem;
+        padding: 1.4rem 1.1rem;
+        border-radius: 20px;
     }
 
     .form-mascot-peek {
-        top: -32px;
-        right: 10px;
-        width: 75px;
-        height: 75px;
+        top: -18px;
+        right: 18px;
+        width: 150px;
+        height: 150px;
     }
 
-    /* 8. FOOTER: Kompakt & Vorbereitung für Daumen-Bar */
+    /* 9. Footer */
     .site-footer {
-        padding: 1.8rem 0 5rem 0;
-    }
-
-    .footer-top-action {
-        margin-bottom: 0.8rem;
+        padding: 2rem 0 5.2rem 0;
     }
 
     .footer-main-grid {
         grid-template-columns: 1fr;
-        gap: 1.4rem;
-        padding-bottom: 1.4rem;
+        gap: 1.5rem;
+        padding-bottom: 1.5rem;
     }
 
     .footer-bottom-bar {
         flex-direction: column-reverse;
         align-items: flex-start;
-        gap: 0.8rem;
+        gap: 0.9rem;
         padding-top: 1rem;
     }
-
-    /* 9. Rechtliches */
-    .legal-title {
-        font-size: 1.75rem;
-        line-height: 1.2;
-    }
-
-    .legal-meta {
-        margin-bottom: 1.4rem;
-    }
-
-    .legal-section {
-        margin-bottom: 1.2rem;
-        padding-bottom: 1rem;
+    .footer-social-links {
+        margin-bottom: 1.6rem; /* Vergrößert den Abstand unter den Social Icons */
     }
 }
