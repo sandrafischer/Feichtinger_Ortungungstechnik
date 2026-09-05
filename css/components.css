@@ -133,23 +133,56 @@
     transform: translateY(-8px) rotate(-45deg);
 }
 
+/* Mobile Actions Wrapper in der Topbar */
+.topbar-actions-mobile {
+    display: none;
+}
+
+/* Runder Call-Button */
+.topbar-call-btn {
+    width: 38px;
+    height: 38px;
+    background-color: var(--color-primary-cyan);
+    color: var(--color-dark-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 0 14px rgba(0, 206, 209, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.topbar-call-btn:hover {
+    transform: scale(1.05);
+}
+
+.topbar-call-btn svg {
+    width: 18px;
+    height: 18px;
+    stroke: var(--color-dark-bg);
+}
+
 
 /* =========================================
-   2. HERO SECTION
+   2. HERO SECTION (Desktop 100vh Viewport)
    ========================================= */
-/* 2. Hero-Section bis ganz oben an den Bildschirmrand ziehen */
 .hero-section {
     margin-top: 0;
-    padding-top: calc(72px + 3rem);
-    padding-bottom: 5rem;
-    /* Weicher, dezenter Verlauf: sanfter violetter Hauch mittig, außen sehr dunkles Petrol/Türkis */
+    min-height: 100vh;                     /* Füllt immer die gesamte Bildschirmhöhe */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;        /* Verteilt Header/Inhalt und USP-Bar perfekt bis ganz nach unten */
+    box-sizing: border-box;
+    padding-top: calc(72px + 2.5rem);
+    padding-bottom: 2.5rem;               /* Schließt bündig unten ab */
     background:
             radial-gradient(
                     ellipse 85% 70% at 50% 40%,
-                    #190621 0%,                      /* 1. Ganz innen: Fast schwarzes, sehr dunkles Lila */
-                    rgba(52, 14, 72, 0.5) 40%,    /* 2. Ring darum: Dein bisheriges dezentes Lila */
-                    rgba(13, 31, 38, 0.85) 60%,     /* 3. Weiter außen: Übergang ins dunkle Petrol */
-                    #051418 100%                    /* 4. Ganz am Rand: Dunkles Basis-Petrol */
+                    #190621 0%,
+                    rgba(52, 14, 72, 0.5) 40%,
+                    rgba(13, 31, 38, 0.85) 60%,
+                    #051418 100%
             ),
             #051418;
     color: var(--color-text-light);
@@ -301,7 +334,8 @@
    3. HERO USP BAR
    ========================================= */
 .hero-usp-bar-container {
-    margin-top: 4.5rem;
+    margin-top: auto;                      /* Drückt die USP-Bar immer ganz nach unten an den Bildschirmrand */
+    padding-top: 2rem;
 }
 
 /* Äußerer Container: Dezent abgedunkelter Glas-Look */
